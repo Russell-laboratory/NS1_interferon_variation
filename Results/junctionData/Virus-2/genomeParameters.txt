@@ -1,0 +1,16 @@
+### STAR   --runMode genomeGenerate   --runThreadN 1   --genomeDir Results/junctionData/Virus-2/   --genomeFastaFiles Database/WSN_vRNA.fa      --genomeSAindexNbases 3   --sjdbFileChrStartEnd Results/junctionData/Virus-2/threshold_intron.tsv   
+### GstrandBit 32
+versionGenome	2.7.1a
+genomeFastaFiles	Database/WSN_vRNA.fa 
+genomeSAindexNbases	3
+genomeChrBinNbits	18
+genomeSAsparseD	1
+sjdbOverhang	100
+sjdbFileChrStartEnd	Results/junctionData/Virus-2/threshold_intron.tsv 
+sjdbGTFfile	-
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	4185743 17198877

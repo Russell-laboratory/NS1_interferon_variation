@@ -1,0 +1,37 @@
+                                 Started job on |	Aug 12 13:48:08
+                             Started mapping on |	Aug 12 13:48:08
+                                    Finished on |	Aug 12 13:50:22
+       Mapping speed, Million of reads per hour |	776.78
+
+                          Number of input reads |	28913365
+                      Average input read length |	90
+                                    UNIQUE READS:
+                   Uniquely mapped reads number |	23710475
+                        Uniquely mapped reads % |	82.01%
+                          Average mapped length |	90.09
+                       Number of splices: Total |	0
+            Number of splices: Annotated (sjdb) |	0
+                       Number of splices: GT/AG |	0
+                       Number of splices: GC/AG |	0
+                       Number of splices: AT/AC |	0
+               Number of splices: Non-canonical |	0
+                      Mismatch rate per base, % |	0.21%
+                         Deletion rate per base |	0.00%
+                        Deletion average length |	1.72
+                        Insertion rate per base |	0.00%
+                       Insertion average length |	1.09
+                             MULTI-MAPPING READS:
+        Number of reads mapped to multiple loci |	780
+             % of reads mapped to multiple loci |	0.00%
+        Number of reads mapped to too many loci |	0
+             % of reads mapped to too many loci |	0.00%
+                                  UNMAPPED READS:
+  Number of reads unmapped: too many mismatches |	1857678
+       % of reads unmapped: too many mismatches |	6.42%
+            Number of reads unmapped: too short |	2769029
+                 % of reads unmapped: too short |	9.58%
+                Number of reads unmapped: other |	575403
+                     % of reads unmapped: other |	1.99%
+                                  CHIMERIC READS:
+                       Number of chimeric reads |	0
+                            % of chimeric reads |	0.00%

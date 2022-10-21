@@ -66,43 +66,34 @@ Notebook describing the empirical setting of influenza and interferon thresholds
 
 Identification of deletions in single-cell RNAseq. Uses a similar method as Hamele et al. 2022 J. Virol. Remaps gapped reads from STAR output using BLAST and then calls deletions using a custom script. Additionally records non-gap spanning reads to infer mixed deletion/non-deletion infections.
 
+### BulkSequencingMapping
 
-
-This bu
-
-This notebook describes, first, generation of tiled primer sets in the forward, and reverse, orientations. Target annealing temperature was 60 degrees as calculated by the methods described in Breslauer et al. 1986 PNAS. Predicted size distributions are generated, and primers are output into an excel sheet compatible with ordering in a 384-well format. 
-
-Next, this notebook describes the assembly of barcodes and junctions. First, Up and Down junctions are matched to a given barcode sequence. Thereafter, Up and Down junctions associated with >75% of sequences aligning to a given barcode are assembled into a combined barcode-junction identity. Barcode-specific sequencing datasets can then be procesed into discrete junction counts.
-
-Assembly statistics are thereafter calculated across all datasets, as well as the fraction of theoretical versus actual junctions in both sets of libaries. 
-
-Analysis as appear in the manuscript are then performed, observing how junction abundance is altered under different selections. Include a few additional quality-control analyses not described in manuscript for those who wish to delve into the data more deeply. 
-
-Lastly, this notebook outputs a DESeq2-compatible counts matrix that is analyzed with the companion R script, barcode_DESeq.Rmd, and then graphs the output of that same script. 
-
-### Interferon_beta_natural_diversity.ipynb
-
-Processing of natural diversity mRNA and vRNA sequencing. As we are not looking at discrete sequences within the fastQ files, as above, we add additional quality-processing steps.  Prior to any additional analysis, we first present our general quality metrics using fastQC and a custom script to parse results.
+Similar to Mendes et al. 2020 PLoS Pathogens.
+Processing of natural diversity vRNA sequencing.Prior to any additional analysis, we first present our general quality metrics using fastQC and a custom script to parse results.
 
 First, as all samples were tagmented using Nextera adapters, Trimmomatic is used to remove these sequences as well as generally process our fastQC files. Again, a custom script is used to parse output for readability in our notebook.
 
-All reads, mRNA and vRNA, are then mapped using STAR. For mRNA, default values are used for mapping. For vRNA, values were chosen to enforce ungapped mapping to the A/WSN/1933 genome. Unmapped reads are retained as seperate fastQ files for vRNA.
-
-HTSeq was then used to prepare mRNA alignments for analysis with DESeq2. As the abbreviation for neuraminidase (NA) causes issues with processing, this is cleaned up. These data are then analyzed with the companion R script, expressionAnalysis.Rmd.
+All reads are then mapped using STAR. Values were chosen to enforce ungapped mapping to the A/WSN/1933 genome. Unmapped reads are retained as seperate fastQ files.
 
 For unmapped reads, files were converted to fasta files and run through BLASTn. Discontinuous junctions were identified wherein the discontinuity matched to the same segment, with the same polarity. These junctions were then used to initialize a new GTF, and generate a new STAR index, one for each biologically distinct viral population. 
 
 Unmapped reads were then mapped using these new STAR indices, enforcing matching to annotated discontinuities only. The resulting four bamfiles (2 for read1, 2 for read2) were merged and flags were fixed to identify pairmates. To count the number of occurrences of a given deletion junction, bamfiles data were sorted on pairmates, and, using awk, only reads where one or the other read has a discontinuity were retained for counting. Thereafter, it was ensured that each read was consistent with the deletion; that is, if the two reads overlap in the region containing the deletion, they must both call the same deletion. It is also required that between the two reads, at least 3 bases of sequence are mapped to either side of the junction.
 
+Deletions within replicates were maintained, however additional deletions, unmapped by STAR yet identified by BLAST, in NS, were retained owing to their relative rarity for the analyses described in the manuscript.
+
 Remaining portions of this notebook describe analysis as depicted in the manuscript, and generation of those figures. 
 
-### Flow_cytometry.ipynb
+### SeuratUMAP.Rmd
+
+R-markdown file describing Seurat analysis and UMAP clustering of single-cell RNAseq data.
+
+### FlowCytometry.ipynb
 
 General analysis of flow cytometry data after initial debris gate and exporting to csv datafiles. Thresholds set on uninfected controls, expected to have no production of interferons or staining for influenza A virus proteins.
 
-### qPCR_analysis.ipynb
+### qPCR.ipynb
 
-Analysis of qCPR data exported to csv files. Data already pre-processed to generate Ct values, and, at times, also corrected for housekeeping. L32 used as housekeeping control throughout. 
+Analysis of qCPR data exported to csv files. Also includes titer measurements for analysis of genome/infectivity ratios. 
 
 ## Note
 

@@ -1,0 +1,8 @@
+           Time    Speed        Read     Read   Mapped   Mapped   Mapped   Mapped Unmapped Unmapped Unmapped Unmapped
+                    M/hr      number   length   unique   length   MMrate    multi   multi+       MM    short    other
+Aug 12 12:41:45    372.3     6308124       91    72.9%     91.2     0.2%     0.0%     0.0%     5.6%     8.3%    13.2%
+Aug 12 12:42:45    371.0    12471112       91    72.9%     91.2     0.2%     0.0%     0.0%     5.6%     8.2%    13.2%
+Aug 12 12:43:46    368.4    18622405       91    72.9%     91.2     0.2%     0.0%     0.0%     5.6%     8.3%    13.2%
+Aug 12 12:44:46    368.7    24782000       91    72.9%     91.1     0.2%     0.0%     0.0%     5.6%     8.3%    13.2%
+Aug 12 12:45:46    367.3    30815988       91    72.9%     91.1     0.2%     0.0%     0.0%     5.6%     8.3%    13.2%
+ALL DONE!

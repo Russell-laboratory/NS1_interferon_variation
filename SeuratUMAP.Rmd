@@ -1,0 +1,67 @@
+---
+title: "Seurat UMAP"
+output: html_notebook
+---
+
+Lets load in the dataset and appropriate libraries
+
+```{r}
+library(dplyr)
+library(Seurat)
+library(patchwork)
+library(ggplot2)
+Flu.data <- Read10X(data.dir = "Sequencing/NS_meOH/outs/filtered_gene_bc_matrices/human_flu/")
+Flu <- CreateSeuratObject(counts = Flu.data, project = "Flu", min.cells = 3, min.features = 200)
+Flu
+```
+
+Subset to only cells that met our independent thresholds as derived in our python notebook. Add in metadata for positivity regarding IFN and influenza as well as fractional expression.
+
+```{r}
+#subset to accepted cells
+acceptedCells <- read.csv("Results/acceptedCells.csv")$cell
+Flu <- Flu[, colnames(Flu) %in% acceptedCells]
+
+
+#only pulling IFNB1 as others are negligibly expressed
+Flu[["percent.IFN"]] <- PercentageFeatureSet(Flu, features                                          =c('human-flu-IFNB1','human-flu-IL28B','human-flu-IL28A','human-flu-IL28B','human-flu-IL29'))
+Flu[["percent.influenza"]] <- PercentageFeatureSet(Flu, features                                          =c('human-flu-PB2','human-flu-PB1','human-flu-PA','human-flu-HA','human-flu-NP',                                             'human-flu-NA', 'human-flu-M-mRNA','human-flu-NS-mRNA'))
+IFNpos <-  read.csv("Results/IFN_list.csv")$cell
+Flupos <-  read.csv("Results/Flu_list.csv")$cell
+
+Flu[["IFN.positive"]] <- colnames(Flu) %in% IFNpos
+Flu[["Flu.positive"]] <- colnames(Flu) %in% Flupos
+
+```
+
+Normalize, find variable features, cluster
+```{r}
+Flu <- NormalizeData(Flu)
+Flu <- FindVariableFeatures(Flu, selection.method = "vst", nfeatures = 2000)
+all.genes <- rownames(Flu)
+Flu <- ScaleData(Flu, features = all.genes)
+Flu <- RunPCA(Flu, features = VariableFeatures(object = Flu))
+ElbowPlot(Flu)
+Flu <- FindNeighbors(Flu, dims = 1:15)
+Flu <- FindClusters(Flu, resolution = 0.04)
+ggsave(c("Figures/elbowplot.pdf"), plot=ElbowPlot(Flu), width=6, height=3.6, units="in")
+```
+Lets go ahead and cluster via UMAP
+
+```{r}
+Flu <- RunUMAP(Flu, dims = 1:15)
+DimPlot(Flu, reduction = "umap")
+
+ggsave(c("Figures/FirstCluster.pdf"), plot=DimPlot(Flu, reduction = "umap"), width=6, height=3.6, units="in")
+
+```
+How do these clusters reflect our binary assignments of flu positive and interferon positive?
+
+```{r}
+FeaturePlot(Flu, features = c("percent.influenza", "percent.IFN", "IFN.positive", "Flu.positive"))
+ggsave(c("Figures/binaryAssignmentsCluster.pdf"), plot=FeaturePlot(Flu, features = c("percent.influenza", "percent.IFN", "Flu.positive", "IFN.positive")), width=12, height=7.2, units="in")
+
+```
+
+
+

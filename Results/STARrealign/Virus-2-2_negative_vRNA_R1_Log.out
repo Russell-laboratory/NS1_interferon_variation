@@ -1,0 +1,97 @@
+STAR version=2.7.3a
+STAR compilation time,server,dir=Tue Oct 8 18:55:53 GMT 2019 :/Users/travis/build/alexdobin/travis-tests/STARcompile/source
+##### Command Line:
+STAR --runMode alignReads --runThreadN 4 --genomeDir Results/junctionData/Virus-2/ --readFilesIn Results/STARalign/Virus-2-2_negative__R1_Unmapped.out.mate1 --outFileNamePrefix Results/STARrealign/Virus-2-2_negative_vRNA_R1_ --outSAMtype BAM Unsorted --alignSJoverhangMin 1000 --outFilterMismatchNmax 3 --scoreDelOpen -6 --scoreDelBase -6 --alignEndsType EndToEnd --outReadsUnmapped Fastx
+##### Initial USER parameters from Command Line:
+outFileNamePrefix                 Results/STARrealign/Virus-2-2_negative_vRNA_R1_
+###### All USER parameters from Command Line:
+runMode                       alignReads     ~RE-DEFINED
+runThreadN                    4     ~RE-DEFINED
+genomeDir                     Results/junctionData/Virus-2/     ~RE-DEFINED
+readFilesIn                   Results/STARalign/Virus-2-2_negative__R1_Unmapped.out.mate1        ~RE-DEFINED
+outFileNamePrefix             Results/STARrealign/Virus-2-2_negative_vRNA_R1_     ~RE-DEFINED
+outSAMtype                    BAM   Unsorted        ~RE-DEFINED
+alignSJoverhangMin            1000     ~RE-DEFINED
+outFilterMismatchNmax         3     ~RE-DEFINED
+scoreDelOpen                  -6     ~RE-DEFINED
+scoreDelBase                  -6     ~RE-DEFINED
+alignEndsType                 EndToEnd     ~RE-DEFINED
+outReadsUnmapped              Fastx     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           alignReads
+runThreadN                        4
+genomeDir                         Results/junctionData/Virus-2/
+readFilesIn                       Results/STARalign/Virus-2-2_negative__R1_Unmapped.out.mate1   
+outFileNamePrefix                 Results/STARrealign/Virus-2-2_negative_vRNA_R1_
+outReadsUnmapped                  Fastx
+outSAMtype                        BAM   Unsorted   
+outFilterMismatchNmax             3
+scoreDelBase                      -6
+scoreDelOpen                      -6
+alignSJoverhangMin                1000
+alignEndsType                     EndToEnd
+
+-------------------------------
+##### Final effective command line:
+STAR   --runMode alignReads   --runThreadN 4   --genomeDir Results/junctionData/Virus-2/   --readFilesIn Results/STARalign/Virus-2-2_negative__R1_Unmapped.out.mate1      --outFileNamePrefix Results/STARrealign/Virus-2-2_negative_vRNA_R1_   --outReadsUnmapped Fastx   --outSAMtype BAM   Unsorted      --outFilterMismatchNmax 3   --scoreDelBase -6   --scoreDelOpen -6   --alignSJoverhangMin 1000   --alignEndsType EndToEnd
+----------------------------------------
+
+Finished loading and checking parameters
+Reading genome generation parameters:
+### STAR   --runMode genomeGenerate   --runThreadN 1   --genomeDir Results/junctionData/Virus-2/   --genomeFastaFiles Database/WSN_vRNA.fa      --genomeSAindexNbases 3   --sjdbFileChrStartEnd Results/junctionData/Virus-2/threshold_intron.tsv   
+### GstrandBit=32
+versionGenome                 2.7.1a     ~RE-DEFINED
+genomeFastaFiles              Database/WSN_vRNA.fa        ~RE-DEFINED
+genomeSAindexNbases           3     ~RE-DEFINED
+genomeChrBinNbits             18     ~RE-DEFINED
+genomeSAsparseD               1     ~RE-DEFINED
+sjdbOverhang                  100     ~RE-DEFINED
+sjdbFileChrStartEnd           Results/junctionData/Virus-2/threshold_intron.tsv        ~RE-DEFINED
+sjdbGTFfile                   -     ~RE-DEFINED
+sjdbGTFchrPrefix              -     ~RE-DEFINED
+sjdbGTFfeatureExon            exon     ~RE-DEFINED
+sjdbGTFtagExonParentTranscripttranscript_id     ~RE-DEFINED
+sjdbGTFtagExonParentGene      gene_id     ~RE-DEFINED
+sjdbInsertSave                Basic     ~RE-DEFINED
+genomeFileSizes               4185743   17198877        ~RE-DEFINED
+Genome version is compatible with current STAR
+Number of real (reference) chromosomes= 8
+1	HA_vRNA	1789	0
+2	M_vRNA	1041	1048576
+3	NA_vRNA	1423	2097152
+4	NP_vRNA	1579	3145728
+5	NS_vRNA	904	4194304
+6	PA_vRNA	2247	5242880
+7	PB1_vRNA	2355	6291456
+8	PB2_vRNA	2355	7340032
+--sjdbOverhang = 100 taken from the generated genome
+Started loading the genome: Tue Aug 16 10:23:55 2022
+
+Genome: size given as a parameter = 4185743
+SA: size given as a parameter = 17198877
+SAindex: size given as a parameter = 1
+Read from SAindex: pGe.gSAindexNbases=3  nSAi=84
+nGenome=4185743;  nSAbyte=17198877
+GstrandBit=32   SA number of indices=4169424
+Shared memory is not used for genomes. Allocated a private copy of the genome.
+Genome file size: 4185743 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading Genome ... done! state: good=1 eof=0 fail=0 bad=0; loaded 4185743 bytes
+SA file size: 17198877 bytes; state: good=1 eof=0 fail=0 bad=0
+Loading SA ... done! state: good=1 eof=0 fail=0 bad=0; loaded 17198877 bytes
+Loading SAindex ... done: 411 bytes
+Finished loading the genome: Tue Aug 16 10:23:55 2022
+
+Sum of all Genome bytes: 13921487
+Sum of all SA bytes: 1525633564
+Sum of all SAi bytes: 30049
+Processing splice junctions database sjdbN=10391,   pGe.sjdbOverhang=100 
+alignIntronMax=alignMatesGapMax=0, the max intron size will be approximately determined by (2^winBinNbits)*winAnchorDistNbins=589824
+Opening the file: Results/STARrealign/Virus-2-2_negative_vRNA_R1__STARtmp//Unmapped.out.mate1.thread0 ... ok
+Opening the file: Results/STARrealign/Virus-2-2_negative_vRNA_R1__STARtmp//Unmapped.out.mate1.thread1 ... ok
+Opening the file: Results/STARrealign/Virus-2-2_negative_vRNA_R1__STARtmp//Unmapped.out.mate1.thread2 ... ok
+Opening the file: Results/STARrealign/Virus-2-2_negative_vRNA_R1__STARtmp//Unmapped.out.mate1.thread3 ... ok
+Created thread # 1
+Created thread # 2
+Created thread # 3

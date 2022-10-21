@@ -1,0 +1,16 @@
+### STAR   --runMode genomeGenerate   --genomeDir Data/Flu_Genome/STAR   --genomeFastaFiles Data/Flu_Genome/WSN_vRNA.fa      --genomeSAindexNbases 2
+### GstrandBit 32
+versionGenome	2.7.1a
+genomeFastaFiles	Data/Flu_Genome/WSN_vRNA.fa 
+genomeSAindexNbases	2
+genomeChrBinNbits	18
+genomeSAsparseD	1
+sjdbOverhang	0
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	-
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	2097152 112971
