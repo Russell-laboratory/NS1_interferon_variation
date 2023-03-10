@@ -1,0 +1,32 @@
+---
+title: "2405NSmut"
+output: html_notebook
+---
+
+Lets load in the dataset and appropriate libraries
+
+```{r}
+library(dplyr)
+library(Seurat)
+library(patchwork)
+library(ggplot2)
+library(SoupX)
+library(DropletUtils)
+fluData = load10X("2405NSmut/outs")
+nonExpressedGeneList = list(flugenes = c("PB1_mRNA", "PB2_mRNA", "PA_mRNA", "HA_mRNA", "NP_mRNA", "NA_mRNA", "M_mRNA", "NS_mRNA" ))
+useToEst = estimateNonExpressingCells(fluData, nonExpressedGeneList = nonExpressedGeneList, clusters= FALSE)
+fluData = calculateContaminationFraction(fluData, nonExpressedGeneList, useToEst = useToEst)
+
+out = adjustCounts(fluData)
+
+```
+
+
+```{r}
+DropletUtils:::write10xCounts("strainedCounts/2405NSmut", out)
+```
+```{r}
+```
+
+
+

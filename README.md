@@ -19,10 +19,10 @@ The following directories, and their purpose, exist within this repository.
 - <b>Database</b>       Repository for influenza genomic sequences. A/WSN/1933 BLAST database and STAR indicies provided. 
 - <b>Results</b>        Final datafiles for analyses after processing. Most provided as supplemental files within manuscript.
 - <b>Scripts</b>        Short scripts written for this analysis. Seperated from jupyter notebooks for readability and portability.
-- <b>Sequencing</b>     Folder that would contain NGS samples and 10x genomics output to regenerate this pipeline. Folder achitecture essential to run of pipeline.
+- <b>Sequencing</b>     Folder that would contain NGS samples and 10x genomics output to regenerate this pipeline. Folder achitecture essential to run off pipeline.
 - <b>flowCytometry</b>  Flow cytometry raw data
 - <b>Data</b>           qPCR, flow cytometry, and titer data
-  
+- <b>Kelly_et_al_2022_reanalysis</b> Reanalysis of Kelly et al. 2022 data. Typo where donor 1905 is actually 1904, so transpose for paper.
   
 
 ## Dependencies
@@ -49,10 +49,10 @@ The following python packages and versions were used. All were installed using c
 
 The following R packages and versions were used. All were installed using CRAN (https://cran.r-project.org/)
 - <b>dplyr</b>      run with version 1.0.9 (https://dplyr.tidyverse.org/)
--<b>Seurat</b>	    run with version 4.1.1 (https://satijalab.org/seurat/)
 -<b>patchwork</b>    run with version 1.1.1 (https://patchwork.data-imaginist.com/)
 -<b>ggplot2</b>     run with version 3.3.6 (https://ggplot2.tidyverse.org/)
-
+-<b>DropletUtils<\b> run with version 1.16.0 (https://bioconductor.org/packages/release/bioc/html/DropletUtils.html)
+-<b>SoupX<\b> run with version SoupX 1.6.2 (https://cran.r-project.org/package=SoupX)
 
 ## Jupyter notebooks
 

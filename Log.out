@@ -1,0 +1,74 @@
+STAR version=2.7.3a
+STAR compilation time,server,dir=Tue Oct 8 18:55:53 GMT 2019 :/Users/travis/build/alexdobin/travis-tests/STARcompile/source
+##### Command Line:
+STAR --runMode genomeGenerate --runThreadN 1 --genomeDir Results/junctionData/Virus-1/ --genomeFastaFiles Database/WSN_vRNA.fa --sjdbFileChrStartEnd Results/junctionData/Virus-1/threshold_intron.tsv --genomeSAindexNbases 3 --genomeChrBinNbits 20
+##### Initial USER parameters from Command Line:
+###### All USER parameters from Command Line:
+runMode                       genomeGenerate     ~RE-DEFINED
+runThreadN                    1     ~RE-DEFINED
+genomeDir                     Results/junctionData/Virus-1/     ~RE-DEFINED
+genomeFastaFiles              Database/WSN_vRNA.fa        ~RE-DEFINED
+sjdbFileChrStartEnd           Results/junctionData/Virus-1/threshold_intron.tsv        ~RE-DEFINED
+genomeSAindexNbases           3     ~RE-DEFINED
+genomeChrBinNbits             20     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           genomeGenerate
+runThreadN                        1
+genomeDir                         Results/junctionData/Virus-1/
+genomeFastaFiles                  Database/WSN_vRNA.fa   
+genomeSAindexNbases               3
+genomeChrBinNbits                 20
+sjdbFileChrStartEnd               Results/junctionData/Virus-1/threshold_intron.tsv   
+
+-------------------------------
+##### Final effective command line:
+STAR   --runMode genomeGenerate   --runThreadN 1   --genomeDir Results/junctionData/Virus-1/   --genomeFastaFiles Database/WSN_vRNA.fa      --genomeSAindexNbases 3   --genomeChrBinNbits 20   --sjdbFileChrStartEnd Results/junctionData/Virus-1/threshold_intron.tsv   
+----------------------------------------
+
+Finished loading and checking parameters
+Dec 28 15:23:12 ... starting to generate Genome files
+Database/WSN_vRNA.fa : chr # 0  "HA_vRNA" chrStart: 0
+Database/WSN_vRNA.fa : chr # 1  "M_vRNA" chrStart: 1048576
+Database/WSN_vRNA.fa : chr # 2  "NA_vRNA" chrStart: 2097152
+Database/WSN_vRNA.fa : chr # 3  "NP_vRNA" chrStart: 3145728
+Database/WSN_vRNA.fa : chr # 4  "NS_vRNA" chrStart: 4194304
+Database/WSN_vRNA.fa : chr # 5  "PA_vRNA" chrStart: 5242880
+Database/WSN_vRNA.fa : chr # 6  "PB1_vRNA" chrStart: 6291456
+Database/WSN_vRNA.fa : chr # 7  "PB2_vRNA" chrStart: 7340032
+Estimated genome size=209388608   8388608   201000000
+GstrandBit=32
+Number of SA indices: 27386
+Dec 28 15:23:12 ... starting to sort Suffix Array. This may take a long time...
+Number of chunks: 1;   chunks size limit: 18589921664 bytes
+Dec 28 15:23:12 ... sorting Suffix Array chunks and saving them to disk...
+Writing 219088 bytes into Results/junctionData/Virus-1//SA_0 ; empty space on disk = 100188946432 bytes ... done
+Dec 28 15:23:12 ... loading chunks from disk, packing SA...
+Dec 28 15:23:12 ... finished generating suffix array
+Dec 28 15:23:12 ... generating Suffix Array index
+Dec 28 15:23:12 ... completed Suffix Array index
+Loaded database junctions from file: Results/junctionData/Virus-1/threshold_intron.tsv, total number of junctions: 15486 junctions
+
+Dec 28 15:23:12   Loaded database junctions from the pGe.sjdbFileChrStartEnd file(s), 15486 total junctions
+
+Dec 28 15:23:12   Finished preparing junctions
+Dec 28 15:23:12 ..... inserting junctions into the genome indices
+Dec 28 15:23:14   Finished SA search: number of new junctions=15435, old junctions=0
+Dec 28 15:23:17   Finished sorting SA indicesL nInd=6139388
+Genome size with junctions=11491043  8388608   3102435
+GstrandBit1=32   GstrandBit=32
+Dec 28 15:23:17   Finished inserting junction indices
+Dec 28 15:23:17   Finished SAi
+Dec 28 15:23:17 ..... finished inserting junctions into genome
+Dec 28 15:23:17 ... writing Genome to disk ...
+Writing 11491043 bytes into Results/junctionData/Virus-1//Genome ; empty space on disk = 100188028928 bytes ... done
+SA size in bytes: 25437946
+Dec 28 15:23:17 ... writing Suffix Array to disk ...
+Writing 25437946 bytes into Results/junctionData/Virus-1//SA ; empty space on disk = 100176494592 bytes ... done
+Dec 28 15:23:17 ... writing SAindex to disk
+Writing 8 bytes into Results/junctionData/Virus-1//SAindex ; empty space on disk = 100150935552 bytes ... done
+Writing 32 bytes into Results/junctionData/Virus-1//SAindex ; empty space on disk = 100150935552 bytes ... done
+Writing 371 bytes into Results/junctionData/Virus-1//SAindex ; empty space on disk = 100150935552 bytes ... done
+Dec 28 15:23:17 ..... finished successfully
+DONE: Genome generation, EXITING

@@ -1,0 +1,13 @@
+﻿virus,HA,IFNB1,ribavirin,replicate
+NS1-stop,3.297012839,0.008999971,No,1
+NS1-stop,2.896596502,0.008076579,No,2
+NS1-stop,4.096944458,0.021747564,No,3
+NS1-stop,4.011837355,0.01049522,No,4
+uninfected,0,0,No,1
+uninfected,0,0,No,2
+uninfected,0,0,No,3
+uninfected,0,0,No,4
+NS1-stop,2.1300998,0.004600232,Yes,1
+NS1-stop,1.846985278,0.00091095,Yes,2
+NS1-stop,1.658871736,0.004230411,Yes,3
+NS1-stop,2.321533597,0.001450312,Yes,4
