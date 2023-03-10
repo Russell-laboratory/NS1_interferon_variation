@@ -49,10 +49,10 @@ The following python packages and versions were used. All were installed using c
 
 The following R packages and versions were used. All were installed using CRAN (https://cran.r-project.org/)
 - <b>dplyr</b>      run with version 1.0.9 (https://dplyr.tidyverse.org/)
--<b>patchwork</b>    run with version 1.1.1 (https://patchwork.data-imaginist.com/)
--<b>ggplot2</b>     run with version 3.3.6 (https://ggplot2.tidyverse.org/)
--<b>DropletUtils<\b> run with version 1.16.0 (https://bioconductor.org/packages/release/bioc/html/DropletUtils.html)
--<b>SoupX<\b> run with version SoupX 1.6.2 (https://cran.r-project.org/package=SoupX)
+- <b>patchwork</b>    run with version 1.1.1 (https://patchwork.data-imaginist.com/)
+- <b>ggplot2</b>     run with version 3.3.6 (https://ggplot2.tidyverse.org/)
+- <b>DropletUtils</b> run with version 1.16.0 (https://bioconductor.org/packages/release/bioc/html/DropletUtils.html)
+- <b>SoupX</b> run with version SoupX 1.6.2 (https://cran.r-project.org/package=SoupX)
 
 ## Jupyter notebooks
 
